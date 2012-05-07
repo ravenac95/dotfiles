@@ -81,3 +81,9 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+" Javascript Specific
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" Sass specific
+autocmd FileType sass setlocal tabstop=2 shiftwidth=2 softtabstop=2
