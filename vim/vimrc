@@ -5,6 +5,7 @@ call pathogen#helptags()
 " Code Folding
 set foldmethod=indent
 set foldlevel=99
+set number
 
 " Indenting
 set nocompatible
@@ -17,6 +18,8 @@ set softtabstop=4
 set expandtab
 set showmatch
 set linebreak
+" Hit indentation levels instead of -4/+4
+set shiftround 
 
 " Hide buffers don't delete
 set hidden
@@ -60,6 +63,10 @@ map <leader>r :RopeRename<CR>
 " Searching
 nmap <leader>a <Esc>:Ack!
 
+" Status Line Settings
+set showmode
+set showcmd
+set mouse=a
 set statusline+=%{fugitive#statusline()}
 
 map <Leader>] <Plug>MakeGreen " change from <Leader>t to <Leader>]
@@ -87,3 +94,9 @@ autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Sass specific
 autocmd FileType sass setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" Jinja2 file extension
+autocmd BufNewFile,BufRead *.jinja set filetype=jinja
+
+" System Clipboard support
+set clipboard=unnamed
