@@ -10,7 +10,7 @@ set number
 " Indenting
 set nocompatible
 set ruler
-set smartindent
+set nosmartindent
 set autoindent
 set tabstop=4
 set shiftwidth=4
@@ -67,6 +67,8 @@ nmap <leader>a <Esc>:Ack!
 set showmode
 set showcmd
 set mouse=a
+set ruler
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set statusline+=%{fugitive#statusline()}
 
 map <Leader>] <Plug>MakeGreen " change from <Leader>t to <Leader>]
@@ -100,3 +102,6 @@ autocmd BufNewFile,BufRead *.jinja set filetype=jinja
 
 " System Clipboard support
 set clipboard=unnamed
+
+" Disable audio beeping
+set vb
