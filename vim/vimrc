@@ -105,3 +105,6 @@ let g:pymode_lint_onfly = 1
 
 " Don't open quickfix for pylint
 let g:pymode_lint_cwindow = 0
+
+" File Tab complete 
+set wildmenu
