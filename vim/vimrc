@@ -94,6 +94,9 @@ autocmd FileType sass setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Jinja2 file extension
 autocmd BufNewFile,BufRead *.jinja set filetype=jinja
 
+" VEfile file
+autocmd BufNewFile,BufRead VEfile set filetype=yaml
+
 " System Clipboard support
 set clipboard=unnamed
 
