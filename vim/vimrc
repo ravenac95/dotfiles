@@ -45,12 +45,6 @@ filetype on
 " enable loading indent file for filetype
 filetype plugin indent on 
 
-" Pyflakes don't use quickfix
-let g:pyflakes_use_quickfix = 0
-
-" PEP8
-let g:pep8_map='<leader>8'
-
 " Python Auto Completion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
@@ -105,3 +99,9 @@ set clipboard=unnamed
 
 " Disable audio beeping
 set vb
+
+" Run linter on the fly
+let g:pymode_lint_onfly = 1
+
+" Don't open quickfix for pylint
+let g:pymode_lint_cwindow = 0

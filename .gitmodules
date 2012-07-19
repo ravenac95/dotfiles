@@ -52,3 +52,6 @@
 [submodule "vim/bundle/rename"]
 	path = vim/bundle/rename
 	url = https://github.com/wojtekmach/vim-rename.git
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
