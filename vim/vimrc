@@ -88,6 +88,9 @@ EOF
 " Javascript Specific
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" YAML Specific
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 " Sass specific
 autocmd FileType sass setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -108,6 +111,9 @@ let g:pymode_lint_onfly = 1
 
 " Don't open quickfix for pylint
 let g:pymode_lint_cwindow = 0
+
+" Ignore these pylint warning
+let g:pymode_lint_ignore = "W404"
 
 " File Tab complete 
 set wildmenu
