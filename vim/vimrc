@@ -94,6 +94,9 @@ autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Sass specific
 autocmd FileType sass setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" EJS File extension
+autocmd BufNewFile,BufRead *.ejs set filetype=html
+
 " Jinja2 file extension
 autocmd BufNewFile,BufRead *.jinja set filetype=jinja
 
