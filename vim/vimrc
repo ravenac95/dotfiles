@@ -120,3 +120,6 @@ let g:pymode_lint_ignore = "W404"
 
 " File Tab complete 
 set wildmenu
+
+" Ignore warnings in javascript
+let g:syntastic_quiet_warnings=1
