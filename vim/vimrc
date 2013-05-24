@@ -1,6 +1,36 @@
+set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'wincent/Command-T'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'tpope/vim-surround'
+Bundle 'ervandew/supertab'
+Bundle 'sontek/minibufexpl.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'alfredodeza/pytest.vim'
+Bundle 'reinh/vim-makegreen'
+Bundle 'vim-scripts/TaskList.vim'
+Bundle 'vim-scripts/The-NERD-tree.git'
+Bundle 'tpope/vim-haml'
+Bundle 'lambdalisue/nose.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'rodjek/vim-puppet'
+Bundle 'wojtekmach/vim-rename'
+Bundle 'klen/python-mode'
+Bundle 'pangloss/vim-javascript'
+Bundle 'briancollins/vim-jst'
+Bundle 'scrooloose/syntastic'
+Bundle 'Rykka/riv.vim'
+
 
 " Code Folding
 set foldmethod=indent
@@ -8,7 +38,6 @@ set foldlevel=99
 set number
 
 " Indenting
-set nocompatible
 set ruler
 set nosmartindent
 set autoindent
