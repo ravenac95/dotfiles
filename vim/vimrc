@@ -152,3 +152,5 @@ set wildmenu
 
 " Ignore warnings in javascript
 let g:syntastic_quiet_warnings=1
+
+let g:syntastic_ignore_files=['\c.*\.rst']
