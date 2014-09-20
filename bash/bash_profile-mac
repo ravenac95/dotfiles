@@ -1,7 +1,7 @@
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
-export PATH=/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH:/Applications/VMware\ Fusion.app/Contents/Library
 export EDITOR=vim
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -10,6 +10,22 @@ fi
 eval "$(hub alias -s)"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export GOOS=darwin
+export GOARCH=amd64
+export GOPATH="$HOME/.gopath"
+export GOBIN=$GOPATH/bin
+export CC=/usr/local/bin/gcc-4.9
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.23.0/libexec"
+export AWS_CREDENTIAL_FILE="$HOME/awscreds.txt"
+export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+export AWS_AUTO_SCALING_HOME="/usr/local/Cellar/auto-scaling/1.0.61.4/libexec"
+export PATH="/usr/local/heroku/bin:/Users/raven/development/tools/depot_tools:$PATH:$GOBIN"
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+#export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin:$GOBIN
+
+
+ulimit -S -n 10240
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
