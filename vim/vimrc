@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'wincent/Command-T'
@@ -13,7 +13,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
-Plugin 'sontek/minibufexpl.vim'
+Plugin 'fholgado/minibufexpl.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'alfredodeza/pytest.vim'
@@ -164,6 +164,6 @@ let g:pymode_repo_guess_project = 0
 set wildmenu
 
 " Ignore warnings in javascript
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 let g:syntastic_ignore_files=['\c.*\.rst']
