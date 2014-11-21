@@ -1,7 +1,7 @@
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
-export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH:/Applications/VMware\ Fusion.app/Contents/Library
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/Applications/VMware\ Fusion.app/Contents/Library
 export EDITOR=vim
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -14,7 +14,7 @@ export GOOS=darwin
 export GOARCH=amd64
 export GOPATH="$HOME/development/go"
 export GOBIN=$GOPATH/bin
-export CC=/usr/local/bin/gcc-4.9
+#export CC=/usr/local/bin/gcc-4.9
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.23.0/libexec"
 export AWS_CREDENTIAL_FILE="$HOME/awscreds.txt"
