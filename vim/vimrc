@@ -10,7 +10,8 @@ Plugin 'tpope/vim-git'
 Plugin 'wincent/Command-T'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
 Plugin 'fholgado/minibufexpl.vim'
@@ -34,6 +35,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'saltstack/salt-vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'wookiehangover/jshint.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -160,6 +162,8 @@ let g:pymode_lint_ignore = "W404"
 
 let g:pymode_repo_guess_project = 0
 
+let g:pymode_rope_completion = 0
+
 " File Tab complete 
 set wildmenu
 
@@ -167,3 +171,7 @@ set wildmenu
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 let g:syntastic_ignore_files=['\c.*\.rst']
+
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
