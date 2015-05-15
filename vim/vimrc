@@ -36,6 +36,7 @@ Plugin 'saltstack/salt-vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'markcornick/vim-terraform'
 
 call vundle#end()
 
@@ -83,7 +84,7 @@ filetype plugin indent on
 
 " Python Auto Completion
 au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<C-Tab>"
 set completeopt=menuone,longest,preview
 
 " RopeVim (Refactoring Tools)
@@ -133,6 +134,9 @@ autocmd FileType sass setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Scss specific
 autocmd FileType scss setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" Ruby specific
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 " EJS File extension
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
@@ -172,6 +176,5 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 let g:syntastic_ignore_files=['\c.*\.rst']
 
-let g:UltiSnipsExpandTrigger="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
