@@ -1,3 +1,5 @@
 .netrwhist
 pip/cache
 vim/bundle
+nvim/autoload
+nvim/plugged

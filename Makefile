@@ -11,3 +11,6 @@ install-vundle:
 setup: install-vundle
 	ln -s `pwd`/vim/vimrc $HOME/.vimrc
 	ln -s `pwd`/vim $HOME/.vim
+
+install-vim-plug:
+	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
