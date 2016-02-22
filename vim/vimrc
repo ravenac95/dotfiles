@@ -35,8 +35,10 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'saltstack/salt-vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'wookiehangover/jshint.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'markcornick/vim-terraform'
+Plugin 'robbles/logstash.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 
@@ -81,6 +83,7 @@ filetype on
 
 " enable loading indent file for filetype
 filetype plugin indent on 
+filetype plugin on
 
 " Python Auto Completion
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -156,17 +159,23 @@ set clipboard=unnamed
 set vb
 
 " Run linter on the fly
-let g:pymode_lint_onfly = 1
+let pymode_lint_on_fly = 0
 
 " Don't open quickfix for pylint
-let g:pymode_lint_cwindow = 0
+let pymode_lint_cwindow = 0
 
 " Ignore these pylint warning
-let g:pymode_lint_ignore = "W404"
+let pymode_lint_ignore = "W404"
 
-let g:pymode_repo_guess_project = 0
+let pymode_repo_guess_project = 0
 
-let g:pymode_rope_completion = 0
+let pymode_rope_completion = 0
+
+let pymode_rope = 0
+
+let pymode_rope_complete_on_dot = 0
+
+"let g:neocomplete#enable_at_startup = 1
 
 " File Tab complete 
 set wildmenu
@@ -178,3 +187,6 @@ let g:syntastic_ignore_files=['\c.*\.rst']
 
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+
+" http://vim.wikia.com/wiki/Search_for_visually_selected_text
+vnoremap // y/<C-R>"<CR>
