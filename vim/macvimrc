@@ -1,1 +1,4 @@
 set guifont=Menlo\ Regular:h14
+
+colorscheme shine
+colorscheme macvim

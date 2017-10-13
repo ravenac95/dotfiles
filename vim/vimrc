@@ -1,46 +1,51 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'wincent/Command-T'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'alfredodeza/pytest.vim'
-Plugin 'reinh/vim-makegreen'
-Plugin 'vim-scripts/TaskList.vim'
-Plugin 'vim-scripts/The-NERD-tree.git'
-Plugin 'tpope/vim-haml'
-Plugin 'lambdalisue/nose.vim'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'rodjek/vim-puppet'
-Plugin 'wojtekmach/vim-rename'
-Plugin 'klen/python-mode'
-Plugin 'pangloss/vim-javascript'
-Plugin 'briancollins/vim-jst'
-Plugin 'scrooloose/syntastic'
-Plugin 'fatih/vim-go'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'saltstack/salt-vim'
-Plugin 'stephpy/vim-yaml'
-Plugin 'wookiehangover/jshint.vim'
-Plugin 'markcornick/vim-terraform'
-Plugin 'robbles/logstash.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdcommenter'
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
+endfunction
 
-call vundle#end()
+set rtp+=/usr/local/opt/fzf
+Plug 'gmarik/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'mileszs/ack.vim'
+Plug 'sjl/gundo.vim'
+Plug 'alfredodeza/pytest.vim'
+Plug 'reinh/vim-makegreen'
+Plug 'vim-scripts/TaskList.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-haml'
+Plug 'lambdalisue/nose.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'rodjek/vim-puppet'
+Plug 'wojtekmach/vim-rename'
+Plug 'klen/python-mode'
+Plug 'pangloss/vim-javascript'
+Plug 'briancollins/vim-jst'
+Plug 'scrooloose/syntastic'
+Plug 'fatih/vim-go'
+Plug 'kchmck/vim-coffee-script'
+Plug 'saltstack/salt-vim'
+Plug 'stephpy/vim-yaml'
+Plug 'markcornick/vim-terraform'
+Plug 'robbles/logstash.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
 
 " Code Folding
 set foldmethod=indent
@@ -110,6 +115,8 @@ map <Leader>] <Plug>MakeGreen " change from <Leader>t to <Leader>]
 " NERDTree Mapping
 map <Leader>n :NERDTreeToggle<CR>
 
+map <Leader>t :FZF<CR>
+
 " Highligh all search pattern matches
 set hlsearch
 
@@ -139,6 +146,9 @@ autocmd FileType scss setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Ruby specific
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" Terraform specific
+autocmd FileType terraform setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " EJS File extension
 autocmd BufNewFile,BufRead *.ejs set filetype=html
@@ -182,11 +192,15 @@ set wildmenu
 
 " Ignore warnings in javascript
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
 let g:syntastic_ignore_files=['\c.*\.rst']
 
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+" let g:loaded_youcompleteme = 1
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 vnoremap // y/<C-R>"<CR>
